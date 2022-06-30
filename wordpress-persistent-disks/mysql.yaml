@@ -37,12 +37,9 @@ spec:
             - "--default-authentication-plugin=mysql_native_password"
           env:
             - name: MYSQL_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mysql
-                  key: password
+              value: "{{.MysqlPassword}}"
           ports:
-            - containerPort: 3306
+            - containerPort: 6426
               name: mysql
           volumeMounts:
             - name: mysql-persistent-storage

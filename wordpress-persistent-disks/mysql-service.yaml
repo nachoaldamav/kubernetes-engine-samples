@@ -23,7 +23,7 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 3306
+    - port: 6426
   selector:
     app: mysql
 # [END gke_wordpress_persistent_disks_mysql_service_service_mysql]

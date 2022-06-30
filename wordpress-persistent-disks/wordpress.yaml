@@ -35,12 +35,9 @@ spec:
           name: wordpress
           env:
           - name: WORDPRESS_DB_HOST
-            value: mysql:3306
+            value: containers-us-west-64.railway.app:6426
           - name: WORDPRESS_DB_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: mysql
-                key: password
+            value: "{{.MysqlPassword}}"
           ports:
             - containerPort: 80
               name: wordpress
